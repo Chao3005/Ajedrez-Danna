@@ -2,21 +2,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Clase Reina que extiende Pieza para implementar una pieza de ajedrez de tipo reina
+ * Clase Alfil que extiende Pieza para implementar una pieza de ajedrez de tipo alfil
  * @author
  * @version (Noviembre 2022)
  * @see Pieza
  * @see Posicion
  */
-public class Reina extends Pieza{
+public class Alfil extends Pieza{
 
     /**
-     * Constructor parametrizado de un objeto Reina
-     * @param inicial Posicion inicial de la reina en el tablero
-     * @param esBlanca Booleano true para una reina blanca o false para negra
+     * Constructor parametrizado de un objeto Alfil
+     * @param inicial Posicion inicial del alfil en el tablero
+     * @param esBlanca Booleano true para un alfil blanco o false para negro
      * @throws NullPointerException En caso de recibir una posicion null
      */
-    public Reina(Posicion inicial, boolean esBlanca){
+    public Alfil(Posicion inicial, boolean esBlanca){
         this.asignarPosicion(inicial);
         this.asignarColor(esBlanca);
     }
@@ -30,16 +30,6 @@ public class Reina extends Pieza{
         LinkedList<Posicion> movimientos = new LinkedList<Posicion>();
         int columnaActual = (int) this.posicionActual.obtenerColumna();
         int filaActual = this.posicionActual.obtenerFila();
-        // Movimiento horizontal
-        for(int i = 97;i < 105;i++){
-            if(i != columnaActual)
-                movimientos.add(new Posicion((char) i, filaActual));
-        }
-        //Movimiento vertical
-        for(int i=1;i < 9;i++){
-            if(i != filaActual)
-                movimientos.add(new Posicion((char) columnaActual, i));
-        }
         //Diagonal /
         int menor = (columnaActual-96 < filaActual) ? columnaActual-97 : filaActual-1;
         for(int i = columnaActual-menor, j=filaActual-menor; (i < 105) && (j < 9);i++,j++){
@@ -79,6 +69,6 @@ public class Reina extends Pieza{
      */
     @Override
     public String toString(){
-        return "Q" + (this.color ? "B" : "N");
+        return "A" + (this.color ? "B" : "N");
     }
 }

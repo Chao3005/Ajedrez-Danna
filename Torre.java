@@ -2,21 +2,21 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Clase Reina que extiende Pieza para implementar una pieza de ajedrez de tipo reina
+ * Clase Torre que extiende Pieza para implementar una pieza de ajedrez de tipo torre
  * @author
  * @version (Noviembre 2022)
  * @see Pieza
  * @see Posicion
  */
-public class Reina extends Pieza{
+public class Torre extends Pieza{
 
     /**
-     * Constructor parametrizado de un objeto Reina
-     * @param inicial Posicion inicial de la reina en el tablero
-     * @param esBlanca Booleano true para una reina blanca o false para negra
+     * Constructor parametrizado de un objeto Torre
+     * @param inicial Posicion inicial de la torre en el tablero
+     * @param esBlanca Booleano true para una torre blanca o false para negra
      * @throws NullPointerException En caso de recibir una posicion null
      */
-    public Reina(Posicion inicial, boolean esBlanca){
+    public Torre(Posicion inicial, boolean esBlanca){
         this.asignarPosicion(inicial);
         this.asignarColor(esBlanca);
     }
@@ -40,20 +40,6 @@ public class Reina extends Pieza{
             if(i != filaActual)
                 movimientos.add(new Posicion((char) columnaActual, i));
         }
-        //Diagonal /
-        int menor = (columnaActual-96 < filaActual) ? columnaActual-97 : filaActual-1;
-        for(int i = columnaActual-menor, j=filaActual-menor; (i < 105) && (j < 9);i++,j++){
-            if(i == columnaActual)
-                continue;
-            movimientos.add(new Posicion((char) i, j));
-        }
-        //Diagonal \
-        menor = (columnaActual-97 < 8-filaActual) ? columnaActual-97 : 8-filaActual;
-        for(int i=columnaActual-menor, j=filaActual+menor;(i < 105) && (j > 0);i++,j--){
-            if(i == columnaActual)
-                continue;
-            movimientos.add(new Posicion((char) i, j));
-        } 
         return movimientos;
     }
 
@@ -79,6 +65,6 @@ public class Reina extends Pieza{
      */
     @Override
     public String toString(){
-        return "Q" + (this.color ? "B" : "N");
+        return "T" + (this.color ? "B" : "N");
     }
 }
