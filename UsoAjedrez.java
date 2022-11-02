@@ -23,5 +23,11 @@ public class UsoAjedrez {
             System.out.println(p);
         }
         System.out.println(knight.esValida(new Posicion('g', 4)));
+
+        Rey king = new Rey(new Posicion('a', 8), false);
+        for(Posicion p : king.posiblesMovimientos()){
+            System.out.println(p);
+        }
+        System.out.println(king.esValida(new Posicion('b', 4)));
     }
 }
