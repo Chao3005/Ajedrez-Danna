@@ -29,5 +29,11 @@ public class UsoAjedrez {
             System.out.println(p);
         }
         System.out.println(king.esValida(new Posicion('b', 4)));
+
+        Peon pawn = new Peon(new Posicion('g', 3), true);
+        for(Posicion p : pawn.posiblesMovimientos()){
+            System.out.println(p);
+        }
+        System.out.println(pawn.esValida(new Posicion('g', 4)));
     }
 }
