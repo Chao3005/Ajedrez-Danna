@@ -7,8 +7,8 @@ import java.util.List;
  * @see Posicion
  */
 public abstract class Pieza {
-    private Posicion posicionActual;
-    private boolean color;
+    protected Posicion posicionActual;
+    protected boolean color;
 
     /**
      * Método consultor de la posición de una pieza
@@ -55,6 +55,7 @@ public abstract class Pieza {
      * Método que determina si es válido mover esta pieza desde su posición actual a la posición p
      * @param p Posición a la que se pretende mover la pieza
      * @return Devuelve un booleano true de ser válido o false de lo contrario
+     * @throws NullPointerException En caso de recibir un parámetro null
      */
     public abstract boolean esValida(Posicion p);
 
