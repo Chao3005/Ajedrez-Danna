@@ -17,5 +17,11 @@ public class UsoAjedrez {
             System.out.println(p);
         }
         System.out.println(bishop.esValida(new Posicion('g', 8)));
+
+        Caballo knight = new Caballo(new Posicion('e', 5), true);
+        for(Posicion p : knight.posiblesMovimientos()){
+            System.out.println(p);
+        }
+        System.out.println(knight.esValida(new Posicion('g', 4)));
     }
 }
