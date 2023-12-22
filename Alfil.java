@@ -10,6 +10,7 @@ import java.util.List;
  */
 public class Alfil extends Pieza{
 
+    //Amo mucho a mi novia
     /**
      * Constructor parametrizado de un objeto Alfil
      * @param inicial Posicion inicial del alfil en el tablero
